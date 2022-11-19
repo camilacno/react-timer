@@ -62,6 +62,7 @@ export function Home() {
     }
     setCycles((state) => [...state, newCycle])
     setActiveCycleId(id)
+    setAmountSecondsPassed(0)
     reset()
   }
 
@@ -84,6 +85,12 @@ export function Home() {
   const secondsPassed = currentSeconds % 60
   const minutes = String(minutesPassed).padStart(2, '0')
   const seconds = String(secondsPassed).padStart(2, '0')
+
+  useEffect(() => {
+    if (activeCycle) {
+      document.title = `Counter: ${minutes}:${seconds}`
+    }
+  }, [minutes, seconds, activeCycle])
 
   const task = watch('task')
   const isSubmitDisabled = !task

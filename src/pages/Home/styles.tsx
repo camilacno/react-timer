@@ -105,7 +105,7 @@ export const StartCountdownButton = styled.button`
     cursor: not-allowed;
   }
 
-  &:not(:disbled):hover {
+  &:enabled:hover {
     background-color: ${(props) => props.theme['green-700']};
   }
 

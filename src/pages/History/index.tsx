@@ -20,25 +20,33 @@ export function History() {
               <td>Descrição da tarefa</td>
               <td>20 minutos</td>
               <td>Há 2 meses</td>
-              <Status statusColor='green'>Concluído</Status>
+              <td>
+                <Status statusColor='green'>Concluído</Status>
+              </td>
             </tr>
             <tr>
               <td>Descrição da tarefa</td>
               <td>20 minutos</td>
               <td>Há 2 meses</td>
-              <Status statusColor='green'>Concluído</Status>
+              <td>
+                <Status statusColor='green'>Concluído</Status>
+              </td>
             </tr>
             <tr>
               <td>Descrição da tarefa</td>
               <td>20 minutos</td>
               <td>Há 2 meses</td>
-              <Status statusColor='yellow'>Em andamento</Status>
+              <td>
+                <Status statusColor='green'>Concluído</Status>
+              </td>
             </tr>
             <tr>
               <td>Descrição da tarefa</td>
               <td>20 minutos</td>
               <td>Há 2 meses</td>
-              <Status statusColor='red'>Interrompido</Status>
+              <td>
+                <Status statusColor='green'>Concluído</Status>
+              </td>
             </tr>
           </tbody>
         </table>

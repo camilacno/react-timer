@@ -1,36 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import * as zod from 'zod'
+import { CyclesContext } from '../..'
+import { useForm, useFormContext } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 import { FormContainer, MinutesAmoutInput, TaskInput } from './styles'
 
 export function NewCycleForm() {
-
-  // interface NewCycleFormData {
-//   task: string
-//   minutesAmount: number
-// }
-
-// Type creation based on the schema (many advantages, like type updated automatically
-// by changing the schema)
-  type NewCycleFormData = zod.infer<typeof newCycleFormValidationSchema>
-
-  
-const newCycleFormValidationSchema = zod.object({
-  task: zod.string().min(1, 'Informe a tarefa'),
-  minutesAmount: zod
-    .number()
-    .min(5, 'O cliclo precisa ser de no mínimo 5 minutos')
-    .max(60, 'O cliclo precisa ser de no máximo 60 minutos'),
-})
-
-  const { register, handleSubmit, watch, reset } = useForm<NewCycleFormData>({
-    resolver: zodResolver(newCycleFormValidationSchema),
-    defaultValues: {
-      task: '',
-      minutesAmount: 0,
-    },
-  })
-)
+  const { activeCycle } = useContext(CyclesContext)
+  const { register } = useFormContext()
 
   return (
     <FormContainer>
@@ -65,11 +43,3 @@ const newCycleFormValidationSchema = zod.object({
     </FormContainer>
   )
 }
-function useForm<T>(arg0: { resolver: any; defaultValues: { task: string; minutesAmount: number } }): { register: any; handleSubmit: any; watch: any; reset: any } {
-  throw new Error('Function not implemented.')
-}
-
-function zodResolver(newCycleFormValidationSchema: zod.ZodObject<{ task: zod.ZodString; minutesAmount: zod.ZodNumber }, "strip", zod.ZodTypeAny, { task: string; minutesAmount: number }, { task: string; minutesAmount: number }>): any {
-  throw new Error('Function not implemented.')
-}
-

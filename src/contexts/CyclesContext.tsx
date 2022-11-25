@@ -37,6 +37,7 @@ export function CyclesContextProvider({ children }: CycleContextProviderProps) {
     if (action.type === 'ADD_NEW_CYCLE') {
       return [...state, action.payload.newCycle]
     }
+
     return state
   }, [])
 
